@@ -1,0 +1,47 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 24px;
+  }
+  
+  .logo {
+    width: 61px;
+  }
+  
+  .logo a {
+    height: 100%;
+  }
+  
+  .rights {
+    color: #576067;
+    font-size: 12px;
+    line-height: 15px;
+  }
+  
+  .rights a {
+    color: #6C3EB8;
+    text-decoration: none;
+  }
+  
+  .socials {
+    display: flex;
+    gap: 15px;
+  }
+
+  .icon{
+    width: 24px;
+    height: 24px;
+    color: #576067;
+  }
+  
+  .socials i{
+    width: 24px;
+    height: 24px;
+    color: #576067;
+  }
+  
+  .socials i:hover {
+    color: #6C3EB8;
+  }
