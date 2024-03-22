@@ -2,8 +2,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 25px 0px  20px 0px;
+    padding: 25px 20px;
   }
   
   .logo {
@@ -28,7 +27,7 @@
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: #753F8C;
+    background: var(--dark);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -37,19 +36,20 @@
   .username {
     font-size: 10px;
     line-height: 12px;
-    color: #B8B8B8;
+    color: var(--grey);
   }
   
   .form {
+    position: relative;
     display: flex;
     align-items: center;
-    background: black;
+    background: var(--dark);
     border-radius: 6px;
     height: 27px;
     padding: 7px 10px;
     column-gap: 16px;
     width: 300px;
-    position: relative;
+    
   }
   
   .icon {
@@ -60,34 +60,34 @@
     justify-content: center;
   }
   
-  .icon i {
+  .icon .svg {
     width: 100%;
     height: 100%;
-    fill: #8B57C6;
+    fill: var(--dark-sea);
   }
   
   .input {
+    flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-grow: 1;
   }
   
   .input input {
     font-family: Montserrat, Roboto, sans-serif;
     font-size: 12px;
-    border: none;
     line-height: 14px;
-    color: white;
-    background: black;;
+    color: var(--grey);
+    background: none;
     outline: none;
     width: 100%;
   }
+
+ 
   
   .account {
     display: flex;
     align-items: center;
-    justify-content: center;
     column-gap: 20px;
   }
   
@@ -95,33 +95,40 @@
     cursor: pointer;
   }
   
-  
-  i {
+  .account svg {
     width: 24px;
     height: 24px;
-    color: #8B57C6;
+    color: var(--grey);
   }
   
-  i:hover {
-    color: aliceblue;
+ 
+  
+  .icon-cart {
+    fill: var(--grey);
   }
   
+ 
+  
+  .account svg:hover {
+    fill: var(--white);
+  }
   
   .cart {
     position: relative;
+    margin-bottom: 4px;
   }
-
   
   .count {
     position: absolute;
     width: 14px;
     height: 14px;
-    right: 1px;
-    bottom: -1px;
+    background: var(--violet);
+    right: 4.5px;
+    bottom: -4px;
     border-radius: 50%;
     font-weight: 700;
     font-size: 10px;
-    color: red;
+    color: var(--light);
     text-align: center;
     line-height: 16px;
   }
@@ -138,7 +145,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 8px;
-    background: black;
+    background: var(--dark-sea);
     border-radius: 8px;
   }
   
@@ -148,14 +155,14 @@
   
   .item {
     font-size: 13px;
-    color: gray;
+    color: var(--grey);
     display: flex;
     align-items: center;
     column-gap: 16px;
   }
   
   .item:hover {
-    color: white;
+    color: var(--light);
   }
   
   .image {

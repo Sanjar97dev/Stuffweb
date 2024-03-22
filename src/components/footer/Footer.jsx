@@ -1,14 +1,16 @@
 import React from 'react'
 import styles from './Footer.module.css'
 import LOGO from '../../assets/logo/LOGO 1.svg'
+import { Link } from 'react-router-dom'
+import { ROUTES } from '../../utils/routes'
 
 const Footer = () => {
   return (
     <section className={styles.footer}>
     <div className={styles.logo}>
-      <a>
+      <Link to={ROUTES.HOME}>
         <img src={LOGO} alt="Stuff" />
-      </a>
+      </Link>
     </div>
 
     <div className={styles.rights}>

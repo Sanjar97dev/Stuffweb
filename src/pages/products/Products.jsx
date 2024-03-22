@@ -1,45 +1,39 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getProduct } from '../../store/slices/productSlices';
-import styles from './Product.module.css'
+import React from 'react'
+import { Link } from 'react-router-dom'
+import styles from '../../styles/Products.module.css'
 
-const Products = () => {
-    const { productData, isLoading, error } = useSelector(state => state.product);
-    const dispatch = useDispatch();
+const Products = ({ title, style = {} ,products = [], amount }) => {
+  const list = products.filter((_, i) => i < amount)
 
-    useEffect(() => {
-        dispatch(getProduct());
-    }, [dispatch]);
+  return (
+    <section className={styles.products}>
+    <h2 style={{color: "white"}}>{title}</h2>
+      <div className={styles.list} style={style}>
+        {products.slice(0, 25).map(({ id, images, title, category: { name: cat }, price }) => (
+          <Link to={`/products/${id}`} key={id} className={styles.product}>
+            <img className={styles.image} src={images}/>
 
-    if (isLoading || productData === null) {
-        return <h1>Loading...</h1>;
-    }
+            <div className={styles.wrapper}>
+              <h3 className={styles.title}>{title}</h3>
+              <div className={styles.cat}>{cat}</div>
+              <div className={styles.info}>
+                <div className={styles.price}>{price}$</div>
+                <div className={styles.oldPrice}>
+                  {Math.floor(price * 0.8)}$
+                </div>  
+              </div>
 
-    console.log(productData);
+              <div className={styles.purchases}>
+                {Math.floor(Math.random()*20+1)} purchased
+              </div>
+            </div>
+          </Link>
+        ))}
 
-    return (
-        <div className={styles.product}>
-            <h1 className={styles.title}>Trending</h1>
-        <div className="row ">
-            {productData.slice(0, 42).map(product => (
-                <div key={product.id} className="col-md-4 mb-4">
-                    <div className="card bg-black text-white">
-                        <img id={styles.img} src={product.images} className="card-img-top" alt={product.title} />
-                        <div className="card-body">
-                            <h5 style={{color: '#FFFFFF'}} className="card-title">{product.title.substring(0, 20)}...</h5>
-                            <p style={{color: '#B8B8B8', fontSize: 12}} className="card-text">{product.description.substring(0,80)}...</p>
-                            <div className=' d-flex justify-content-between '>
-                                <h2 style={{color: '#6C3EB8', fontSize: 20}}>{product.price}$</h2>
-                                <p style={{color: '#576067', fontSize: 10}}>{product.category.name}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            ))}
-        </div>
-        <button className={styles.btn} >See More</button>
-        </div>
-    );
-};
+      </div>
 
-export default Products;
+    </section>
+  )
+}
+
+export default Products

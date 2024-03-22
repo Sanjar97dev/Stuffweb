@@ -1,6 +1,6 @@
 import React from 'react'
-import styles from '../../pages/home/Home.module.css'
-import bannerImg from '../../assets/image 1.svg'
+import styles from '../../styles/home.module.css'
+import computer from '../../assets/computer.svg'
 
 const Poster = () => {
   return (
@@ -12,8 +12,9 @@ const Poster = () => {
         <h1 className={styles.head}>LENNON r2d2 with NVIDIA 5090 TI</h1>
         <button className={styles.button}>Shop Now</button>
       </div>
+
       <div className={styles.image}>
-        <img className={styles.bannersImg} src={bannerImg} alt="banner" />
+        <img className={styles.bannersImg} src={computer} alt="banner" />
       </div>
     </div>
   </section>

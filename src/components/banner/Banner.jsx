@@ -1,6 +1,6 @@
 import React from 'react'
-import styles from '../../pages/home/Home.module.css';
-import Saleimg from '../../assets/Rectangle 14.svg'
+import styles from '../../styles/home.module.css'
+import Saleimg from '../../assets/banner.svg'
 
 const Banner = () => {
   return (
