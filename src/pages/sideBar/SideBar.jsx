@@ -7,7 +7,6 @@ import { useSelector } from 'react-redux'
 const SideBar = () => {
     const {list} = useSelector((state)=>state.categories)
 
-    console.log('list',list);
 
     return (
         <div className={styles.sidebar}>
